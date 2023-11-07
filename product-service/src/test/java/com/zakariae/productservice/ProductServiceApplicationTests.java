@@ -17,7 +17,6 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zakariae.productservice.dto.ProductRequest;
-import com.zakariae.productservice.dto.ProductResponse;
 import com.zakariae.productservice.model.Product;
 import com.zakariae.productservice.repository.ProductRepository;
 
@@ -92,7 +91,7 @@ class ProductServiceApplicationTests {
 				.build();
 	}
 
-	
+
 	private Product getProductResponse() {
 		return Product.builder()
 				.id("1")

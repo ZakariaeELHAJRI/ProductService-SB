@@ -52,6 +52,7 @@ public class ProductService {
         log.info("Product updated: {}", product);
     }
 
+    
     public void deleteProduct(String id) {
         Product product = productRepository.findById(id).orElseThrow();
         productRepository.delete(product);

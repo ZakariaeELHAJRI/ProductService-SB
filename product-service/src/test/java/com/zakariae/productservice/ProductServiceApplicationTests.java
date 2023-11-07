@@ -70,6 +70,8 @@ class ProductServiceApplicationTests {
         Assertions.assertEquals("Updated Product", updatedProduct.getName());
     }
 
+
+	
     @Test
     void DeleteProduct() throws Exception {
        Product productResponse = getProductResponse();

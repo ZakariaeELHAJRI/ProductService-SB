@@ -44,6 +44,7 @@ public class ProductController {
         return productService.getProductById(id);
     }
 
+    
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void updateProduct(String id, @RequestBody ProductRequest productRequest) {

@@ -37,6 +37,7 @@ public class ProductService {
         return products.stream().map(this::mapToProductResponse).toList();
     }
 
+    
     public ProductResponse getProductById(String id) {
         Product product = productRepository.findById(id).orElseThrow();
         log.info("Retrieving product by id: {}", product);
@@ -52,7 +53,7 @@ public class ProductService {
         log.info("Product updated: {}", product);
     }
 
-    
+
     public void deleteProduct(String id) {
         Product product = productRepository.findById(id).orElseThrow();
         productRepository.delete(product);

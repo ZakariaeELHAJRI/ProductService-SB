@@ -37,6 +37,27 @@ public class ProductService {
         return products.stream().map(this::mapToProductResponse).toList();
     }
 
+    public ProductResponse getProductById(String id) {
+        Product product = productRepository.findById(id).orElseThrow();
+        log.info("Retrieving product by id: {}", product);
+        return mapToProductResponse(product);
+    }
+
+    public void updateProduct(String id, ProductRequest productRequest) {
+        Product product = productRepository.findById(id).orElseThrow();
+        product.setName(productRequest.getName());
+        product.setDescription(productRequest.getDescription());
+        product.setPrice(productRequest.getPrice());
+        productRepository.save(product);
+        log.info("Product updated: {}", product);
+    }
+
+    public void deleteProduct(String id) {
+        Product product = productRepository.findById(id).orElseThrow();
+        productRepository.delete(product);
+        log.info("Product deleted: {}", product);
+    }
+
     private ProductResponse mapToProductResponse(Product product) {
         return ProductResponse.builder()
                 .id(product.getId())

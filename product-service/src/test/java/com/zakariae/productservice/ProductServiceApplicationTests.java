@@ -52,6 +52,7 @@ class ProductServiceApplicationTests {
 		Assertions.assertEquals(1, productRepository.findAll().size()); //checks if the product is added to the database
 	}
 
+	
 	    void UpdateProduct() throws Exception {
         ProductRequest productRequest = getProductRequest();
 		Product productResponse = getProductResponse();
